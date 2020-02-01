@@ -14,7 +14,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
-    arrayOf("core","swing","WebcamCapture").forEach()
+    arrayOf("core","swing","kotlin","WebcamCapture").forEach()
     { implementation("org.boofcv:boofcv-$it:0.36-SNAPSHOT") }
 }
 

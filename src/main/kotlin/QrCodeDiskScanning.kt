@@ -1,4 +1,3 @@
-import boofcv.abst.fiducial.QrCodeDetector
 import boofcv.factory.fiducial.FactoryFiducial
 import boofcv.gui.BoofSwingUtil
 import boofcv.io.image.UtilImageIO
@@ -9,7 +8,7 @@ fun main() {
     val directory = BoofSwingUtil.openFileChooser("QR Disk Scanning",BoofSwingUtil.FileTypes.DIRECTORIES) ?: return
 
     // Create the scanner class
-    val detector: QrCodeDetector<GrayU8> = FactoryFiducial.qrcode(null,GrayU8::class.java)
+    val detector = FactoryFiducial.qrcode(null,GrayU8::class.java)
 
     // Walk through the path recursively, finding all image files, load them, scan for QR codes, add results to a map
     val imageToMessages = mutableMapOf<String,List<String>>()

@@ -2,8 +2,8 @@ import boofcv.factory.fiducial.FactoryFiducial
 import boofcv.gui.feature.VisualizeShapes
 import boofcv.gui.image.ImagePanel
 import boofcv.gui.image.ShowImages
-import boofcv.io.image.ConvertBufferedImage
 import boofcv.io.webcamcapture.UtilWebcamCapture
+import boofcv.kotlin.asGrayU8
 import boofcv.struct.image.GrayU8
 import java.awt.BasicStroke
 import java.awt.Color
@@ -24,8 +24,7 @@ fun main() {
         val image = webcam.image
 
         // Convert to gray scale and detect QR codes inside
-        val gray = ConvertBufferedImage.convertFrom(image, null as GrayU8?)
-        detector.process(gray)
+        detector.process(image.asGrayU8())
 
         // Draw where boxes around the QR Codes
         val g2 = image.createGraphics()

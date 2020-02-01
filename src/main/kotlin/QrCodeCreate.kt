@@ -1,7 +1,7 @@
 import boofcv.alg.fiducial.qrcode.QrCodeEncoder
 import boofcv.alg.fiducial.qrcode.QrCodeGeneratorImage
 import boofcv.gui.image.ShowImages
-import boofcv.io.image.ConvertBufferedImage
+import boofcv.kotlin.asBufferedImage
 
 fun main() {
     //======================================================================================
@@ -17,11 +17,9 @@ fun main() {
     // It's also possible to generate PDF documents and there is a GUI application available with batch options
 
     //======================================================================================
-    // Convert into a BufferedImage for display and saving to disk
-    val buffered = ConvertBufferedImage.convertTo(generator.gray,null);
 
-    ShowImages.showWindow(buffered,"Your QR Code", true);
+    ShowImages.showWindow(generator.gray.asBufferedImage(),"Your QR Code", true);
 
     // Uncomment to save it to disk as PNG image
-    // UtilImageIO.saveImage(buffered,"qrcode.png");
+    // UtilImageIO.saveImage(generator.gray.asBufferedImage(),"qrcode.png");
 }
