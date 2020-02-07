@@ -21,7 +21,7 @@ fun main() {
 
     while (true) {
         // Load the image from the webcam
-        val image = webcam.image
+        val image = webcam.image ?: break
 
         // Convert to gray scale and detect QR codes inside
         detector.process(image.asGrayU8())
