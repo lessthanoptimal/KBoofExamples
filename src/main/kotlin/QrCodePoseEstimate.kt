@@ -12,10 +12,10 @@ import georegression.struct.se.Se3_F64
 import java.awt.Font
 
 fun main() {
-    // I have a Logitech BRIO and the spec says 90 degree FOV so that's what I will use
+    // By guessing and checking I determined the FOV to be 65 degrees.
     // if you care about accurate results calibrate your camera. This will be Less Than Optimal...
     // https://boofcv.org/index.php?title=Tutorial_Camera_Calibration
-    val fieldOfViewDegrees = 90.0
+    val fieldOfViewDegrees = 65.0
     // How wise the QR Codes are. For demonstration purposes I'm using a larger one that's 16cm
     val markerWidth = 16.0
 
