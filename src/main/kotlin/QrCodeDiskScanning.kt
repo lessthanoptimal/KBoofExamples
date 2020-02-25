@@ -1,5 +1,6 @@
 import boofcv.factory.fiducial.FactoryFiducial
 import boofcv.gui.BoofSwingUtil
+import boofcv.io.image.UtilImageIO
 import boofcv.kotlin.loadImage
 import boofcv.struct.image.GrayU8
 import boofcv.struct.image.ImageType
@@ -15,7 +16,7 @@ fun main() {
     // Walk through the path recursively, finding all image files, load them, scan for QR codes, add results to a map
     val imageToMessages = mutableMapOf<String,List<String>>()
     val elapsedTime = measureTimeMillis {
-        directory.walk().filter {BoofSwingUtil.isImage(it)}.forEach { f ->
+        directory.walk().filter {UtilImageIO.isImage(it)}.forEach { f ->
             val image = f.absoluteFile.loadImage(ImageType.SB_U8)
             detector.process(image)
             imageToMessages[f.absolutePath] = detector.detections.map { it.message }

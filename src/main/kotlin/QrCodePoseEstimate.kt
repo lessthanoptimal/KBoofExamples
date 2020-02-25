@@ -14,6 +14,7 @@ import java.awt.Font
 fun main() {
     // I have a Logitech BRIO and the spec says 90 degree FOV so that's what I will use
     // if you care about accurate results calibrate your camera. This will be Less Than Optimal...
+    // https://boofcv.org/index.php?title=Tutorial_Camera_Calibration
     val fieldOfViewDegrees = 90.0
     // How wise the QR Codes are. For demonstration purposes I'm using a larger one that's 16cm
     val markerWidth = 16.0
