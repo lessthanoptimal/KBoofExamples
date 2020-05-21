@@ -17,7 +17,7 @@ fun main() {
     val gui = ImagePanel()
     gui.preferredSize =  webcam.viewSize
 
-    ShowImages.showWindow(gui, "Gradient", true)
+    ShowImages.showWindow(gui, "Webcam QR Code", true)
 
     while (true) {
         // Load the image from the webcam
